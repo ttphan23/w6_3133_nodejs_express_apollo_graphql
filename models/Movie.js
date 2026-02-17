@@ -52,6 +52,9 @@ movieSchema.pre('save', function() {
   console.log(`Saving movie: ${this.name}`);
 });
 
+movieSchema.set('toObject', { virtuals: true });
+movieSchema.set('toJSON', { virtuals: true });
+
 // Create the Movie model
 const Movie = mongoose.model('Movie', movieSchema);
 export default Movie;
